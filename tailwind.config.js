@@ -7,5 +7,5 @@ module.exports = {
   theme: {
     extend: {},
   },
-  plugins: ["inline-react-svg"],
+  plugins: [],
 };
