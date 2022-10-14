@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.bg-img {
+  background: url("../assets/Background.svg");
+  background-size: contain;
+}
+.bg-banner {
+  background: url("../assets/Side.svg");
+  background-size: contain;
+}
+.btn-gradient {
+  background: linear-gradient(90deg, #6325b1 1.46%, #db00b1 98.54%);
+}
+.twitter-btn-gradient {
+  background: linear-gradient(270deg, #67e4fe 0%, #35abd3 52.4%);
+}
+.fb-btn-gradient {
+  background: linear-gradient(270deg, #3fa3e8 11.18%, #277ebb 63.9%);
+}
+.input-gradient-border {
+  border-bottom: 1px;
+  border-style: solid;
+  border-image: linear-gradient(90deg, #4e03c3 0%, #ff8df9 100%);
+  border-image-slice: 1;
+}
