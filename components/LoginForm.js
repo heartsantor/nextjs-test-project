@@ -1,66 +1,71 @@
 import React from "react";
 import { ArrowRightIcon } from "../components/assets/icons";
+import { useRouter } from "next/router";
 import axios from "axios";
+import NextCors from "nextjs-cors";
 
 const LoginForm = () => {
-  const handleSubmit = async (v) => {
-    v.preventDefault();
-    const bodyData = {
-      name: "Test Name",
-      email: "visitor@connectnow.dev",
-      company: 1,
-    };
-
-    await axios
-      .post("https://api.connectnow.dev/api/widget/visitors", bodyData, {
-        headers: {
-          "Content-Type": "application/json",
-        },
-      })
-      .then((res) => {
-        console.log(
-          "🚀 ~ file: LoginForm.js ~ line 18 ~ handleSubmit ~ res",
-          res
-        );
-        return res;
-      })
-      .catch((err) => {
-        console.log(
-          "🚀 ~ file: LoginForm.js ~ line 26 ~ handleSubmit ~ err",
-          err
-        );
-        return;
-      });
-  };
   // const handleSubmit = async (v) => {
   //   v.preventDefault();
-  //   try {
-  //     const bodyData = {
-  //       name: "Test Name",
-  //       email: "visitor@connectnow.dev",
-  //       company: 1,
-  //     };
+  //   const bodyData = {
+  //     name: "Test Name",
+  //     email: "visitor@connectnow.dev",
+  //     company: 1,
+  //   };
 
-  //     const response = await fetch(
-  //       "https://api.connectnow.dev/api/widget/visitors",
-  //       {
-  //         method: "POST",
-  //         body: JSON.stringify(bodyData),
-  //         headers: {
-  //           Accept: "application/json",
-  //           "Content-Type": "application/json",
-  //         },
-  //       }
-  //     );
-  //     const data = await response.json();
-  //     console.log(data);
-  //   } catch (error) {
-  //     console.log(
-  //       "🚀 ~ file: LoginForm.js ~ line 29 ~ handleSubmit ~ error",
-  //       error
-  //     );
-  //   }
+  //   await axios
+  //     .post("http://localhost:7000", bodyData, {
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //       },
+  //     })
+  //     .then((res) => {
+  //       console.log(
+  //         "🚀 ~ file: LoginForm.js ~ line 18 ~ handleSubmit ~ res",
+  //         res
+  //       );
+  //       return res;
+  //     })
+  //     .catch((err) => {
+  //       console.log(
+  //         "🚀 ~ file: LoginForm.js ~ line 26 ~ handleSubmit ~ err",
+  //         err
+  //       );
+  //       return;
+  //     });
   // };
+  const router = useRouter();
+
+  const handleSubmit = async (v) => {
+    v.preventDefault();
+    // router.push("/home");
+    try {
+      const bodyData = {
+        name: "Test Name",
+        email: "visitor@connectnow.dev",
+        company: 1,
+      };
+
+      const response = await fetch(
+        "https://api.connectnow.dev/api/widget/visitors",
+        {
+          method: "POST",
+          body: JSON.stringify(bodyData),
+          headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json",
+          },
+        }
+      );
+      const data = await response.json();
+      console.log(data);
+    } catch (error) {
+      console.log(
+        "🚀 ~ file: LoginForm.js ~ line 29 ~ handleSubmit ~ error",
+        error
+      );
+    }
+  };
 
   return (
     <form className="mt-[47px]" onSubmit={handleSubmit}>

@@ -1,9 +1,5 @@
 import Image from "next/image";
-import {
-  Twitter,
-  FacebookIcon,
-  ArrowRightIcon,
-} from "../components/assets/icons";
+import { Twitter, FacebookIcon } from "../components/assets/icons";
 import LoginForm from "../components/LoginForm";
 export default function Home() {
   return (
@@ -71,7 +67,7 @@ export default function Home() {
               <button className="mb-1.5 w-full text-left text-white twitter-btn-gradient px-2 py-[19px] block">
                 <span className="inline px-[39px]">
                   <Twitter />
-                  <span className="font-medium text-[14px]">
+                  <span className="font-normal text-[14px]">
                     Sign In With Twitter
                   </span>
                 </span>
@@ -79,7 +75,7 @@ export default function Home() {
               <button className="mb-1.5 w-full text-left text-white fb-btn-gradient px-2 py-[19px] block mt-[22px]">
                 <span className="inline px-[39px]">
                   <FacebookIcon />
-                  <span className="font-medium text-[14px] ">
+                  <span className="font-normal text-[14px] ">
                     Sign In With Facebook
                   </span>
                 </span>
